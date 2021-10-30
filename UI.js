@@ -26,14 +26,14 @@ class progressBar {
 class Grid {
     constructor() {
         this.grid = [];
-        let x = 100;
+        let x = 50;
         for (var i = 0; i < x; i++) {
             this.grid[i] = [];
             for (var j = 0; j < x; j++) this.grid[i][j] = 0;
         }
     }
     createGrid() {
-        let x = 100;
+        let x = 50;
         for (var i = 0; i < x; i++) {
             for (var j = 0; j < x; j++) {
                 $("#grid").append("<div class='cell' id=" + "'" + i + "," + j + "'" + "></div>");
@@ -43,10 +43,11 @@ class Grid {
         $(".cell").height(740 / x);
     }
     nbr_neighbor(x,y){
+        let dim=50;
         var i=0;
         let l=[[0,-1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1]];
         for(var j=0;j<8;j++){
-            if( (x+l[j][0])<100 && (x+l[j][0])>=0 && (y+l[j][1])<100 &&  (y+l[j][1])>=0){
+            if( (x+l[j][0])<dim && (x+l[j][0])>=0 && (y+l[j][1])<dim &&  (y+l[j][1])>=0){
                 if(this.grid[x+l[j][0]][y+l[j][1]]==1) i++;
             }
         }

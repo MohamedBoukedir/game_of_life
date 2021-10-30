@@ -57,7 +57,7 @@ bar.update
                     game_of_life(grid,true);
                 }
                 
-            },1000);
+            },500);
         }, { once: true });
         
     })

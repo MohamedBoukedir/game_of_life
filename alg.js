@@ -1,8 +1,9 @@
 function game_of_life(grid, context) {
     var l = grid.grid;
+    var dim=l.length;
     if (context) {
-        for (var col = 0; col < 100; col++) {
-            for (var row = 0; row < 100; row++) {
+        for (var col = 0; col < dim; col++) {
+            for (var row = 0; row < dim; row++) {
                 var numNeighbors = grid.nbr_neighbor(row, col);
                 if (l[row][col] == 1) {
                     if (numNeighbors < 2) {
