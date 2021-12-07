@@ -2,6 +2,10 @@
 const bar = new progressBar();
 const chrono = new Chrono();
 let grid;
+var slider = document.getElementById("myRange");
+
+
+
 
 bar.update
     .then(() => {
@@ -21,7 +25,6 @@ bar.update
             $(".cell").mouseover(function () {
                 if (i % 2 == 0) {
                     let x = this.id.split(',')[0] - "0", y = this.id.split(',')[1] - "0";
-                    console.log(x, y);
                     grid.grid[y][x] = 1;
                     $(this).css("background-color", "black");
                 }
@@ -30,7 +33,6 @@ bar.update
         })
         const str = document.getElementById('start');
         str.addEventListener('click', () => {
-           
             var x = setInterval(() => {
                 $("#stop").click(() => {
                     chrono.stop = true;
@@ -51,13 +53,26 @@ bar.update
                         clearInterval(x);
                     }
                 }
+
+
             }, 1000)
-            var y = setInterval(() => {
-                if(!chrono.stop){
-                    game_of_life(grid,true);
-                }
-                
-            },500);
+            var interval = 1;
+            var timing = function () {
+                var y = setInterval(() => {
+                    if (!chrono.stop) {
+                        game_of_life(grid, true);
+                    }
+                    if (interval != slider.value) {
+                        interval = slider.value * 10;
+                        console.log(interval);
+                        clearInterval(y);
+                        timing();
+                    }
+                }, interval);
+            }
+            timing();
+
+
         }, { once: true });
-        
+
     })

@@ -9,7 +9,7 @@ function game_of_life(grid, context) {
                     if (numNeighbors < 2) {
                         l[row][col] = 0;
                         var cell = document.getElementById(col+","+row);
-                        cell.style.backgroundColor = "white";
+                        cell.style.backgroundColor = "withe";
                     } else if (numNeighbors == 2 || numNeighbors == 3) {
                         l[row][col] = 1;
                         var cell = document.getElementById(col+","+row);

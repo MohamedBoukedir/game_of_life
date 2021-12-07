@@ -24,14 +24,14 @@
             padding: 0;
             border: none;
             box-shadow: 5px 5px 5px 5px black;
-            background-color: rgb(205, 226, 226);
+            background-color: rgb(255, 255, 255);
         }
 
         .cell {
             margin: 0;
             padding: 0;
             border-radius: 50%;
-            outline: 1px solid rgb(99, 23, 23);
+            outline: 0.2px solid rgb(62, 173, 10);
             display: inline-block;
         }
 
@@ -77,6 +77,45 @@
             font-family: digital;
             margin-bottom: 10px;
         }
+        .slidecontainer {
+             width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            margin-left:50px;
+            margin-top: 20px;
+            width: 80%;
+            height: 15px;
+            border-radius: 5px;
+            background: #6be98b;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -97,6 +136,10 @@
                     <button class="btn" hidden='true' id="start">Start</button>
                     <button class="btn" hidden='true' id="stop">Stop</button>
                     <button class="btn" hidden='true' id="resume">Resume</button>
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p>Value: <span id="demo"></span></p>
                 </div>
             </div>
         </div>
