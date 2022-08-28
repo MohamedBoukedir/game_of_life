@@ -6,7 +6,7 @@ The game is a cellular automaton devised by the British mathematician John Horto
 
 
 
-you can try it  online <a href="https://matrixdeplo.vercel.app/">here</a>
+you can try it  online <a href="https://game-of-life-deployment.vercel.app/">here</a>
 
 <p align="center">
   <img src="./images/demos.png" />
