@@ -39,7 +39,7 @@ class Grid {
                 $("#grid").append("<div class='cell' id=" + "'" + i + "," + j + "'" + "></div>");
             }
         }
-        $(".cell").width(1600 / x);
+        $(".cell").width(1000 / x);
         $(".cell").height(740 / x);
     }
     nbr_neighbor(x,y){
